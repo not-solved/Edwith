@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>float 속성</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>float 속성</h3>
+        <comment>기본 값 : none</comment><br><br>
+        요소를 float(요소를 보통의 흐름에서 벗어나게 함) 시킬지 지정하는 속성<br><br>
+        
+        <fieldset>
+            <index>float</index>: none | left | right | initial | inherit;
+        </fieldset>
+        <br>
+        <u>속성 값</u>
+        <p>
+            <b>none</b> : float 시키지 않음 (기본값)<br><br>
+            <b>left</b> : 좌측으로 float 시킴<br><br>
+            <b>right</b> : 우측으로 float 시킴<br><br>
+            <br>
+        </p>
+
+        <ul type="dissc">
+            <li>요소를 보통의 흐름에서 벗어나 띄어지게 함</li>
+            -> 주변 텍스트나 인라인 요소가 주위를 감싸는 특징이 있음<br><br>
+            <img src="float-1.png" width="650px" height="250px">
+            <br><br><br><br>
+            <li>대부분 요소의 display 값을 block으로 변경함</li>
+            (display 값 변경 예외 : inline-table, flex 등)<br><br>
+            <img src="float-2.png" width="650px" height="100px">
+        </ul>
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>float</title>
+            <style>
+            .container {
+            border: 1px dashed #aaa;
+            padding: 15px;
+            clear: both;
+            }
+            .container div, .container span {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #aaa;
+            color: #fff;
+            }
+            .container :nth-child(1) {
+            background-color: green;
+            }
+            .container :nth-child(2) {
+            background-color: skyblue;
+            }
+
+
+            </style>
+            </head>
+            <body>
+            <h2>요소를 보통의 흐름에서 벗어나 띄워지게 함</h2>
+
+            <div class="container" style="width:400px;">
+                <div style="float:left;">Box1</div>
+                <div style="float:left;">Box2</div>
+            </div>
+
+            <h2 style="margin-top:100px;">주변 텍스트나 인라인요소가 주위를 감싸는 특징이 있음.</h2>
+            <div class="container" style="width:400px;">
+                <div style="float:left;">Box1</div>
+                <div style="float:right;">Box2</div>
+                <p>CSS 속성(property) float 은 한 요소(element)가 보통 흐름(normal flow)으로부터 빠져 텍스트 및 인라인(inline) 요소가 그 주위를 감싸는 자기 컨테이너의 좌우측을 따라 배치되어야 함을 지정합니다. 부동(floating) 요소 는 float 의 계산값(computed value)이 none이 아닌 요소입니다.</p>
+            </div>
+
+            <h2>대부분의 요소에 display 값을 block으로 변경함.</h2>
+            <div class="container" style="width:400px;">
+                <span style="float:left;">inline1</span>
+                <span>inline2</span>
+            </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

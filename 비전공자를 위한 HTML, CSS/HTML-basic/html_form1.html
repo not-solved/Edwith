@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form example page</title>
+    </head>
+    <body>
+        <form action="/text.htmml">
+            <!-- 텍스트박스 : 문자열을 입력받는 항목
+                            placeholder으로 텍스트박스에 설명을 입력할 수 있다. -->
+            <b>Text box</b><br>
+            <input type="text" placeholder="Input String"><br><br>
+
+            <!-- 패스워드 : 문자열을 입력하되 비밀번호 입력란과 같이 디스플레이에는 숨겨진 형태로 보인다.  -->
+            <b>Password</b><br>
+            <input type="password"><br><br>
+
+            <!-- 라디오박스 : 여러 선택사항 중 하나만 선택하는 버튼
+                            name 속성의 이름을 통일시켜야 해당 속성값으로 전달되며 단일 선택이 활성화된다.
+                            checked를 명시하면 default값으로 해당 값을 갖게 된다. -->
+            <b>Radio box</b><br>
+            <input type="radio" name="number" checked> 1번
+            <input type="radio" name="number"> 2번
+            <input type="radio" name="number"> 3번<br><br>
+
+            <!-- 체크박스 : 여러 선택사항 중 하나만 선택하는 버튼
+                            name 속성의 이름을 통일시켜야 해당 속성값으로 전달이 된다..
+                            checked를 명시하면 default값으로 해당 값을 갖게 된다. -->
+
+            <b>Check box</b><br>
+            <input type="checkbox" name="Alphabet" checked> A 
+            <input type="checkbox" name="Alphabet"> B 
+            <input type="checkbox" name="Alphabet"> C 
+            <input type="checkbox" name="Alphabet"> D 
+            <input type="checkbox" name="Alphabet"> E <br><br>
+            
+            <!-- 파일 : 드라이브 내 파일을 웹에 업로드하는 기능 -->
+            <b>File form</b><br>
+            <input type="file"><br><br>
+            
+            <!-- 제출 : 현재 페이지의 값들을 웹으로 전달하는 기능 
+                        value 속성으로 버튼 속 글자를 명시할 수 있다. -->
+            <b>Submit form</b><br>
+            <input type="submit" value="전송"><br><br>
+            
+            <!-- 리셋 : 현재 페이지의 모든 상태를 초기화
+                        value 속성으로 버튼 속 글자를 명시할 수 있다. -->
+            <b>Reset form</b><br>
+            <input type="reset" value="취소"><br><br>
+            
+            <!-- 그림 : 페이지에 그림을 출력하는 기능
+                        src로 경로 내 이미지를 불러온다. 
+                        alt에 대체 텍스트를 명시한다.
+                        width, height으로 그림의 크기를 명시할 수 있다. -->
+            <b>Image form</b><br>
+            <input type="image" src="" alt="click" width="100" height="50"><br><br>
+            
+            <!-- 버튼 : 동작을 정할 수 있는 버튼
+                        value 속성으로 버튼 속 글자를 명시할 수 있다. -->
+            <b>Button form</b><br>
+            <input type="button" value="버튼"><br><br>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Content Model 설명</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend><h3>Metadata</h3></legend>
+            <u>콘텐츠의 style(표현), script(동작) 등을 설정하거나<br>
+            다른 문서와의 관계 등의 정보를 포함하는 요소</u><br><br>
+            포함 태그 : base, link, meta, noscript, script, style, title
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Flow</h3></legend>
+            <u>문서에 사용되는 대부분의 요소</u><br>
+            문서의 자연스러운 흐름에 의해 배치되는 요소들이 포함된다.<br>
+            Metadata에 해당하는 일부 태그들만 flow에서 제외되며 요소 대부분이 flow에 포함된다.<br><br>
+            포함 태그 : a, abbr, address,map>area, article, aside,audio, b, bdo, blockquote,br, button,
+            canvas, cite, code, datalist, del, details, dfn, div, dl, em, embed,
+            fieldset, figure, footer, form, h1 ~ h6, header, hgroup, hr, i, iframe, img,
+            input, ins, kbd, keygen, label, map, mark, math, menu, meter, nav, noscript, object, ol,
+            output, p, pre, progress, q, ruby, samp, script, section, select, small, span, strong,
+            style[scoped], sub, sup, svg, table, textarea, time, ul, var, video, wbr
+         </fieldset>
+         
+         <fieldset>
+            <legend><h3>Sectioning</h3></legend>
+            <u>문서의 구조와 관련된 요소들이 포함</u><br>
+            HTML5에서 새로 생긴 article, aside, nav, section 등이 포함되며<br>
+            이 태그들은 문서의 구조, 아웃라인에 영향을 주게 된다.<br><br>
+            포함 태그 : article, aside, nav, section
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Heading</h3></legend>  
+            <u>섹션의 헤더를 정의하는 요소</u><br>
+            각 section의 header를 정의하는 heading 태그가 포함된다.<br><br>
+            포함 태그 : h1, h2, h3, h4, h5, h6
+        </p>
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Phrasing</h3></legend>
+            <u>문서의 텍스트이며 문단 내부 레벨로 마크업 하는 요소</u><br>
+            문서의 텍스트 또는 텍스트를 꾸며주는 문단 내부 레벨로 사용되는 요소들이 포함된다.<br><Br>
+            포함 태그 : a, abbr, map>area, audio, b, bdo, br, button, canvas, cite, code, datalist, del, dfn, em, embed,
+            i, iframe, img, input, ins, kbd, keygen, label, map, mark, math, meter, noscript, object, output,
+            progress, q, ruby, samp, script, select, small, span, strong, sub, sup, svg, textarea, time,
+            var, video, wbr
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Embedded</h3></legend>
+            <u>이미지, 비디오, 플래시 등 외부 콘텐츠를 문서 내에 표현하는 요소</u><br>
+            외부 콘텐츠를 표현하는 요소들이 포함되며 오디오나 비디오, 이미지 등 멀티미디어 관련 요소들이 이에 해당한다.<br><Br>
+            포함 태그 : audio, canvas, embed, iframe, img, math, object, svg, video
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Interactive</h3></legend>
+            <u>사용자와 상호작용을 하는 요소들이 포함</u><br>
+            대표적으로 form 요소들이 이에 해당<br><br>
+            포함 태그 : a, audio[controls], button, details, embed, iframe, img[usemap], input, keygen, label, menu,
+            object[usemap], select, textarea, video[controls]
+        </fieldset>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>margin과 padding 비교</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>Margin과 Padding 비교</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>+</td>
+                    <td>-</td>
+                    <td>auto</td>
+                    <td>단위</td>
+                </tr>
+            </thead>
+            <style>
+                td {
+                    text-align: center;
+                    width: 100px;
+                }
+            </style>
+            <tbody>
+                <tr>
+                    <td><strong>margin</strong></td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>px, %, ...</td>
+                </tr>
+                <tr>
+                    <td><strong>padding</strong></td>
+                    <td>O</td>
+                    <td>X</td>
+                    <td>X</td>
+                    <td>px, %, ...</td>
+                </tr>
+            </tbody>
+        </table> <Br><Br>
+        <p>
+            <ul type="disc">
+                <li><strong>음수값 사용 가능 여부</strong></li>
+                padding은 뼈와 우리 피부 사이의 지방이라고 생각하고, margin은 사람과 사람 사이의 간격이라고 생각하면 간단하다.<br>
+                지방은 아무리 뺀다고 해서 피부가 뼈보다 밑으로 갈 수 없을 뿐만 아니라, 0 이하가 될 수 없으므로 양수만 된다고 생각하면 된다.<br>
+                그러나 사람과 사람 사이는 멀리 떨어질 수도 있지만, 서로 겹쳐서 서 있을 수도 있으므로 음수 값이 가능하다고 생각하면 된다.<br><br>
+                <li><strong>%값의 사용과 기준점</strong></li>
+                margin과 padding은 px과 같은 고정적인 단위 외에도 %라는 상대적인 단위를 사용 할 수 있다.<br>
+                %는 요소의 크기를 기준으로 상대적인 값을 결정짓게 된다.<br>
+                얼핏 생각하면,상하는 height 값에 대해 좌우는 width 값에 대해 크기가 계산될 거 같지만 그렇지 않다.<br>
+                %는 상하좌우의 방향에 관계없이 모두 요소의 width 값을 기준으로 값이 결정 됩니다.
+            </ul>
+        </p> <br><br><br>
+
+        <fieldset>
+            div { <br>
+                <index>width</index>: 100px;<br>
+                <index>height</index>: 200px;<br>
+                <index>margin</index>: 10%;<br>
+                <index>padding</index>: 10%; <br>
+            }
+        </fieldset> <br><br>
+         이 같은 경우 margin과 padding이 모두 20px 10px 20px 10px으로 적용되는 것이 아니라<br>
+         10px 10px 10px 10px 값으로 적용된다.
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>margin & padding</title>
+            <style>
+                div {
+                width: 300px;
+                height: 100px;
+                margin: -10px -10px 20px 30px;
+                padding: 10px 20px 30px 40px; /* padding 음수 사용 불가 */
+                }
+            </style>
+            </head>
+            <body>
+                <div> css margin & padding 비교 실습 </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

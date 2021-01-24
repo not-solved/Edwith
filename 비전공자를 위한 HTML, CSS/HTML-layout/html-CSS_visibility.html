@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>visibility 속성</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>visibility 속성</h3>
+        <comment>기본 값 : visible</comment><br><br>
+        요소의 화면 표시 여부를 지정하는 속성<br><br>
+        
+        <fieldset>
+            <index>visibility</index>: visible | hidden | collapse | initial | inherit;
+        </fieldset>
+        <br>
+        <u>속성 값</u>
+        <p>
+            <b>visible</b> : 화면에 표시 (기본값)<br><br>
+            <b>hidden</b> : 화면에 표시되지 않음(공간은 차지)<br><br>
+            <b>collapse</b> : 셀 간의 경계를 무시하고 숨김 (테이블 관련 요소에만 적용 가능)<br>
+            <br>
+        </p><br>
+
+        <fieldset>
+            <index>visibility</index>: visible; <br>
+            <index>visibility</index>: hidden; <br>
+            <index>visibility</index>: collapse;
+        </fieldset><br><br>
+
+        <h3>display: none 과의 차이점</h3>
+        <ul type="disc">
+            <li><b>display: none</b> -> 요소가 렌더링 되지 않음(DOM에 존재하지 않음)</li><br>
+            <li><b>visibility: hidden</b> -> 요소가 보이지는 않지만 렌더링 되며 화면에 공간을 가지고 있음(DOM에 존재함)            </li>
+        </ul>
+        
+    </body>
+</html>

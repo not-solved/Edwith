@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>가로 길이 속성</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <h3>width 속성</h3>
+        <comment>(기본 값 : 0)</comment>
+        <p>
+            -- 속성 값-- 
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td><b>auto</b></td>
+                        <td>브라우저에 의해 자동으로 계산하여 지정 <br>
+                            (요소의 레벨 기본 특성에 따라 다르게 동작)</td>
+                    </tr>
+                    <tr>
+                        <td><b>length</b></td>
+                        <td>고정값으로 지정 (ex. px, em, ...)</td>
+                    </tr>
+                    <tr>
+                        <td><b>percent</b></td>
+                        <td>부모 요소의 width에 상대적인 크기를 지정</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table> <br><br>
+            width는 content 영역의 너비를 제어할 때 사용하는데 이때 auto가 아닌 특정한 값을 지정하여 사용하면<br>
+            그 크기는 box model 영역에서 margin 영역을 제외한 모든 영역에 대해 영향을 받는다. (content, padding, border)<br>
+        </p> <br><br>
+        예를 들어, <br>
+        <fieldset>
+            <index>width</index>: 100px;<br>
+            <index>padding</index>: 20px;<br>
+            <index>border</index>: 10px solid black;<br>
+        </fieldset> <br>
+        이와 같이 선언된다면 요소의 총 가로 크기는 160px가 된다.
+        width는 padding, border 영역에 대해 영향을 받기 때문 <br><br>
+        
+        <img src="width-1.png" width="300px" height="250px"> <br><Br>
+        100px content + (20px * 2) padding + (10px * 2) border = 160px 이기 때문.<br><br>
+
+        또한 width는 %를 이용하여 크기를 지정할 수 있다.<br><br>
+        
+        <fieldset>
+        .parent { <br>
+            <index>width</index>: 300px;<br>
+            <index>border</index>: 20px solid red;<br>
+        } <br><br>
+        .child {<br>
+            <indeX>width</index>: 50%;<Br>
+            <indeX>padding</index>: 20px;<br>
+            <index>border</index>: 10px solid black;<br>
+        }
+        </fieldset> <br><br>
+        <img src="width-2.png" width="700px" height="250px"> <br><Br>
+    </body>
+</html>

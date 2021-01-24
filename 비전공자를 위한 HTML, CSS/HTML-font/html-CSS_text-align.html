@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Text-align 속성</title>
+    </head>
+    <body>
+        text-align 속성
+
+        텍스트의 정렬을 지정하는 속성입니다. 
+        
+            기본 값 : left (Right to Left 언어일 경우는 right)
+        
+        text-align: left | right | center | justify | initial | inherit ;
+        기본 값은 left이지만 경우에 따라 다릅니다.
+        
+        문서의 방향이 LTR(Left To Right) 왼쪽에서 오른쪽 방향인 언어일 경우 left가 기본값이고,
+        
+        RTL(Right To Left) 로 오른쪽에서 왼쪽으로 읽힐 경우 right가 기본값이 됩니다. 
+        
+        < 속성 값 >
+        
+        left
+        
+        텍스트를 왼쪽으로 정렬
+        
+        right
+        
+        텍스트를 오른쪽으로 정렬
+        
+        center
+        
+        텍스트를 중앙으로 정렬
+        
+        justify
+        
+        텍스트를 라인 양쪽 끝으로 붙여서 정렬. (마지막 라인은 정렬 하지 않음)
+        
+         
+        
+        text-align과 display의 관계
+        
+         -  text-align은 inline-level에 적용
+        
+         -  text-align은 block-level에 적용할 수 없음 
+        
+        그렇다면 block 요소를 가운데 정렬 하고자 한다면 어떻게 해야 할까요?
+        
+        박스모델 챕터에서 다룬 margin의 auto 값을 이용해서 하시면 됩니다. 
+        
+        가운데 정렬 인라인 요소 : text-align (center) 블럭 요소 :  margin (auto) 
+        요소의 레벨에 따라 정렬하는 방식의 차이를 바로 알고 있으시기 바랍니다.
+        
+         
+        
+         
+        코드실습
+    <!--
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+          <meta charset="UTF-8">
+          <title>text-align</title>
+          <style>
+            p {
+              max-width: 630px;
+              border: 1px solid #888;
+              padding: 10px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>text-align</h1>
+          <h2>left</h2>
+          <p style="text-align: left;">이 안내서를 시작하기 전에, 사용법에 익숙한 텍스트 파일을 편잡할 수 있는 편집 툴이 필요하며 최신 브라우저도 필요하다. 파일을 편집하고 싶지 않다면 그냥 안내서를 읽고 해당 예시 그림을 보라. 그러나 배우는데는 더딜 것이다.</p>
+          <h2>right</h2>
+          <p style="text-align: right;">이 안내서를 시작하기 전에, 사용법에 익숙한 텍스트 파일을 편잡할 수 있는 편집 툴이 필요하며 최신 브라우저도 필요하다. 파일을 편집하고 싶지 않다면 그냥 안내서를 읽고 해당 예시 그림을 보라. 그러나 배우는데는 더딜 것이다.</p>
+          <h2>center</h2>
+          <p style="text-align: center;">이 안내서를 시작하기 전에, 사용법에 익숙한 텍스트 파일을 편잡할 수 있는 편집 툴이 필요하며 최신 브라우저도 필요하다. 파일을 편집하고 싶지 않다면 그냥 안내서를 읽고 해당 예시 그림을 보라. 그러나 배우는데는 더딜 것이다.</p>
+          <h2>justify</h2>
+          <p style="text-align: justify;">이 안내서를 시작하기 전에, 사용법에 익숙한 텍스트 파일을 편잡할 수 있는 편집 툴이 필요하며 최신 브라우저도 필요하다. 파일을 편집하고 싶지 않다면 그냥 안내서를 읽고 해당 예시 그림을 보라. 그러나 배우는데는 더딜 것이다.</p>
+        </body>
+        </html>
+    -->
+        </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>display 속성</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>display 속성</h3>
+        <comment>기본 값 : - (요소마다 다름)</comment><br><br>
+        요소의 렌더링 박스 유형을 결정하는 속성<br><br>
+        
+        <fieldset>
+            <index>display</index>: value;
+        </fieldset>
+        <br>
+        <u>속성 값</u>
+        <p>
+            <b>none</b> : 요소가 렌더링 되지 않음<br>
+            <b>inline</b> : inline level 요소처럼 렌더링<br>
+            <b>block</b> : block level 요소처럼 렌더링<br>
+            <b>inline-block</b> : inline level 요소처럼 렌더링되지만 block level의 성질을 가짐<br>
+            <comment font-size="5px"> -> height나 width 등과 같은 박스모델 속성을 적용할 수 있다.</comment>
+            <br>
+        </p><br>
+
+        <ul type="disc">
+            <li>그외에 list-item, flex, inline-flex, table, table-cell 등 다양한 속성 값 존재</li><br>
+            <li><b><u>inline level 요소 사이의 공백과 개행 처리</u></b></li>
+            inline 요소의 경우 공백과 개행에 대해서 하나의 여백으로 받아들인다.<br>
+            따라서 inline와 inline-block의 경우 태그 사이의 공백이나 개행이 있을 경우 약 4px의 여백을 가지게 된다.<br>
+        </ul>
+        <h4></h4>
+        <table>
+            <caption><h3>display와 box model의 관계</h3></caption>
+            <thead>
+                <tr>
+                    <th>display</th>
+                    <th>width</th>
+                    <th>height</th>
+                    <th>margin</th>
+                    <th>padding</th>
+                    <th>border</th>
+                </tr>
+            </thead>
+            <tbody>
+                <style>
+                    td { border: 1pt dotted; text-align: center; width: 100px; height: 30px; }
+                </style>
+                <tr>
+                    <td>block</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                </tr>
+                <tr>
+                    <td>inline</td>
+                    <td>X</td>
+                    <td>X</td>
+                    <td>좌/우</td>
+                    <td>O (설명)</td>
+                    <td>O (설명)</td>
+                </tr>
+                <tr>
+                    <td>inline-block</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                    <td>O</td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table><br><br>
+
+        <h3>(+) inline 요소의 padding/border 속성이 좌/우 만 적용 된다고 표시한 이유 추가 설명</h3>
+         실제로 inline 요소의 padding/border는 좌/우뿐만 아니라 상/하에도 적용이 된다.<br><br>
+        <img src="display-1.png" width="400px" height="100px"><br>
+        <strong>parent는 div, child는 span</strong><br><Br><br>
+
+        하지만 상/하 padding/border는 line-box에는 영향을 주지 못하기 때문에<br>
+        위와 같이 부모 요소의 박스에 반영되지 않음<br><br><br>
+
+        <img src="display-2.png" width="400px" height="110px"><br>
+        <strong>parent는 div, child는 span</strong><br><br>
+
+        또한 인접한 다른 line-box 에도 반영되지않습니다. 즉 콘텐츠가 겹칠 수 있기 때문에 실무에서는 잘 사용하지 않음
+
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>display</title>
+            <style>
+                body>div {
+                padding: 5px;
+                border: 1px dashed #aaa;
+                }
+
+                .box {
+                padding: 15px;
+                background-color: #eee;
+                border: 1px solid #aaa;
+                }
+
+                .none .box {
+                display: none;
+                }
+
+                .inline .box {
+                display: inline;
+                }
+
+                .block .box {
+                display: block;
+                }
+
+                .inline-block .box {
+                display: inline-block;
+                }
+
+                .list-item .box {
+                display: list-item;
+                }
+            </style>
+            </head>
+
+            <body>
+            <h1>display</h1>
+            <h2>none</h2>
+            <div class="none">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+            </div>
+            <h2>inline</h2>
+            <div class="inline">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+                <div class="box">box4</div>
+                <div class="box">box5</div>
+                <div class="box">box6</div>
+                <div class="box">box7</div>
+                <div class="box">box8</div>
+                <div class="box">box9</div>
+                <div class="box">box10</div>
+            </div>
+            <h2>block</h2>
+            <div class="block">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+            </div>
+            <h2>inline-block</h2>
+            <div class="inline-block">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+            </div>
+            <h2>list-item</h2>
+            <div class="list-item">
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+            </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

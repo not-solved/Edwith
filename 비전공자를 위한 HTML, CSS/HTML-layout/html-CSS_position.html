@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>position 속성</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>position 속성</h3>
+        <comment>기본 값 : none</comment><br><br>
+        요소의 위치를 정하는 방법을 지정하는 속성<br><br>
+        
+        <fieldset>
+            <index>position</index>: static | absolute | fixed | relative | sticky | initial | inherit;
+        </fieldset>
+        <br>
+        <u>속성 값</u>
+        <table>
+            <caption></caption>
+            <thead></thead>
+            <style>
+                td { border: 1px dotted; }
+            </style>
+            <tbody>
+                <tr>
+                    <td><b>static</b></td>
+                    <td>Normal-flow 에 따라 배치되며 offset 값이 적용되지 않는다. (기본값)</td>
+                </tr>
+                <tr>
+                    <td><b>absolute </b></td>
+                    <td>
+                        <ul type="disc">
+                            <li>부모 요소의 위치를 기준으로 offset 에 따라 배치된다.</li>
+                                - 부모가 position 값<u>(static 제외)</u>을 가지면 offset 값의 시작점이 된다.<br>
+                                - 부모의 position 값이 static인 경우 조상의 position 값이 static이 아닐 때 까지 거슬러올라가 기준으로 삼는다.<br>
+                            <li>Normal-flow의 흐름에서 벗어난다.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>fixed</b></td>
+                    <td>
+                        <ul type="disc">
+                            <li>뷰포트(브라우저 창)를 기준으로 offset에 따라 배치된다.</li>
+                                즉, 화면 스크롤에 관계없이 항상 화면의 정해진 위치에 정보가 나타난다.
+                            <li>부모의 위치에 영향을 받지 않는다.</li>
+                        </ul> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>relative</b></td>
+                    <td>
+                        <ul type="disc">
+                            <li> 자신이 원래 있어야 할 위치를 기준으로 offset에 따라 배치된다.</li>
+                                부모의 position 속성에 영향을 받지 않는다.
+                            <li><u> Normal-flow</u>의 흐름에 따른다.</li>
+                            <li> 주변 요소에 영향을 주지 않으면서 offset 값으로 이동한다.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table> <br><br>
+        <strong>Normal-flow</strong><br>
+        <p>
+            일반적인 상황에서 각의 요소들의 성질에 따라 배치 되는 순서(흐름)를 뜻한다.<br>
+            예를 들면, block 레벨 요소들은 상하로 배치되고, inline 레벨 요소들은 좌우로 배치되는 것을 말함
+        </p> <br>
+
+        <h3>offset (top / left / bottom / right)</h3>
+        <fieldset>
+            top | bottom | left | right : auto | length | initial | inherit;
+        </fieldset> <br>
+
+        <fieldset>
+            <index>top</index>: 50%;<br>
+            <index>left</index>: 10px;<br>
+            <index>buttom</index>: -10px;<br>
+            <index>right</index>: auto;
+        </fieldset> <br>
+
+        <ul type="disc">
+            <li><strong>offset의 % 단위 사용</strong></li><br>
+            padding과 margin에서 % 값을 적용할 때, 상하좌우 방향에 관계없이 가로 사이즈 기준으로 %값이 계산된다.<br><br>
+            offset은 top, bottom (상하) 는 기준이 되는 요소의 height 값 left, right (좌우) 는 width값에 대하여 계산된다.
+            
+        </ul>
+
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>position</title>
+            <style>
+                .sibling {
+                padding: 5px;
+                background-color: #eee;
+                text-align: center;
+                }
+
+                .parent {
+                border: 1px dashed #aaa;
+                padding: 10px;
+                }
+
+                .child,
+                .child_offset {
+                width: 60px;
+                height: 60px;
+                padding: 20px;
+                background-color: #dc3636;
+                text-align: center;
+                color: #fff;
+                font-weight: bold;
+                border: 1px solid #333;
+                }
+
+                .child_offset {
+                background-color: #3677dc;
+                }
+
+                .static {
+                position: static;
+                }
+
+                .relative {
+                position: relative;
+                }
+
+                .static {
+                position: static;
+                }
+
+                .absolute {
+                position: absolute;
+                }
+
+                .fixed {
+                position: fixed;
+                }
+            </style>
+            </head>
+            <body>
+            <h1>position (Offset 미지정)</h1>
+            <h2>static (기본)</h2>
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                <div class="child static">static</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+            <h2>relative</h2>
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                <div class="child relative">relative</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+            <h2>absolute</h2>
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                !-- absolute, fixed는 inline요소일때 display:block으로 변경시킴. inline-block 값을 임의 지정했을 때는 그 값을 유지함. --
+                <span class="child absolute">absolute</span>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+            <h2>fixed</h2>
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                !-- 현재 fixed는 offset값이 없어 뷰포트 밖으로 밀려나오면서 화면 아래로 사라짐 --
+                <div class="child fixed">fixed</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+
+            <h1>position (Offset 지정)</h1>
+            <h2>static - </h2>
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                <div class="child_offset static" style="top: 40px; right: 40px;">static <br>top: 40, left: 40</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+            <h2>relative</h2>
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                <div class="child_offset relative" style="top: 40px; left: 40px;">relative <br>top: 40, left: 40</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+            <h2>absolute - parent relative</h2>
+            <div class="parent relative">
+                <div class="sibling">Sibling 1</div>
+                <div class="child_offset absolute" style="top: 40px; left: 80px;">absolute<br>top: 40, left: 80</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+
+            <h2>fixed</h2>
+            !-- 부모가 fixed여도 별개로 위치함 --
+            <div class="parent">
+                <div class="sibling">Sibling 1</div>
+                <div class="child_offset fixed" style="top:100px;left:80%;">fixed<br>top:100, left:80%</div>
+                <div class="sibling">Sibling 2</div>
+            </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table example page</title>
+    </head>
+    <body>
+        <table>
+            <caption><b>Specification values</b></caption> <!-- caption : 테이블 상단에 제목 정의 -->
+            <thead>                                 <!-- thead : 테이블 속성 정의 -->
+                <tr>
+                    <th rowspan="2">Grade.</th>     <!-- rowspan : 상하로 합칠 셀 수 정의, 현재 셀 기준으로 아래 n개 통합 -->
+                    <th rowspan="2">Point.</th>
+                    <th colspan="2">Strength.</th>  <!-- colspan : 좌우로 합칠 셀 수 정의, 현재 셀 기준으로 우측 n개 통합 -->
+                    <th rowspan="2">Percent.</th>
+                </tr>
+                <tr>
+                    <th>kg/mm</th>
+                    <th>lb/in</th>
+                </tr>
+            </thead>
+            <tbody>                                 <!-- tbody : thead에서 정의한 항목별로 값을 명시, 적지 않으면 해당 셀은 빈칸으로 남거나 통합 -->
+                <style>
+                    th, td { border: 1px solid; width: 100px; height: 30px; }
+                </style>
+                <tr>                                <!-- tr : 행 하나 정의, 튜플 정의라 생각하면 된다. -->
+                    <td>Hard</td>                 <!-- td : 속성 별 값을 넣는다 생각하면 된다. -->
+                    <td>0.45</td>
+                    <td>56.2</td>
+                    <td>80,000</td>
+                    <td>20</td>
+                </tr>
+                <tr>                                <!-- tr : 행 하나 정의, 튜플 정의라 생각하면 된다. -->
+                    <td>Medium</td>                 <!-- td : 속성 별 값을 넣는다 생각하면 된다. -->
+                    <td>0.45</td>
+                    <td>49.2</td>
+                    <td>70,000</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Soft</td>
+                    <td>0.45</td>
+                    <td>42.2</td>
+                    <td>60,000</td>
+                    <td>30</td>
+                </tr>
+            
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </body>
+</html>

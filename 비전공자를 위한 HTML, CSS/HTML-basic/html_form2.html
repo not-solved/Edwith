@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form example page</title>
+    </head>
+    <body>
+        <form action="/text.htmml" method="post">
+            <b>Select form</b><br>
+            <select>                    <!-- 콤보박스 폼 -->
+                <option selected>옵션 1</option>
+                <option>옵션 2</option> <!-- select 내부에 option으로 개별적인 값 지정 가능 -->
+                <option>옵션 3</option> <!-- selected 속성으로 디폴트 값을 선언 가능 -->
+                <option>옵션 4</option> <!-- select 선언붕 multiple 속성을 명시하면 다중 선택이 가능 -->
+                <option>옵션 5</option>
+            </select> <br><br>
+
+            <b>Textarea form</b><br>    <!-- 텍스트에어리어 폼 -->
+                                        <!-- rows(세로), cols(가로) 크기 지정이 가능, placeholder 기능도 사용 가능 -->
+            <textarea rows="5" cols="50" placeholder="Text Area"></textarea> <br><br>
+
+            <b>Button form</b><br>      <!-- 버튼 폼. 이 상태에서 바로 버튼을 정의 가능하다. -->
+            <button type="submit">Submit button</button>    <!-- 내용에 버튼에 표시할 텍스트 지정 가능 -->
+            <button type="reset">Reset button</button>
+            <button type="button">Custom button</button>
+
+            <!-- 레이블 : form 요소의 이름과 값을 명시적으로 연결해주기 위한 요소
+                        명시적으로 연결해주어 값의 구분을 명확하게 해주기 때문에 사용해주는 것이 좋다.
+                        스크린 리더기를 통해 듣게 되면, form 요소에 접근 시 label을 함께 읽는다.
+                        사용성, 접근성 측면에서 중요한 역할을 하므로 되도록이면 사용하는 것이 좋다. -->
+
+            <!-- fieldset : 묶고자 하는 항목들을 하나의 틀(필드 셋) 안에 감싸는 가능. 단순히 보기 좋게 명시해준다. -->
+            <!-- legend : 필드셋의 항목 이름을 명시하는 부분 -->
+            <fieldset>
+                <legend>First fieldset</legend>
+                <label for="name">이름</label>: <input type="text" id="name"><br>
+                <label for="nickname">별칭</label>: <input type="text" id="nickname"><br>
+                <label for="address">주소</label>: <input type="text" id="address"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Second fieldset</legend>
+                <b>성별 선택 </b>
+                <label for="male">남자</label><input type="radio" name="gender" id="male" checked> 
+                <label for="female">여자</label><input type="radio" name="gender" id="female">
+            </fieldset>
+            
+            <!-- form 태그 : form 요소들을 감싸는 태그로 데이터를 묶어서 실제 서버로 전송해주는 역할
+                            쉽게 말해, 폼 태그 안의 요소들을 취합하여 서버에 전달하는 부분 -->
+            <!--    action : 데이터를 처리하기 위한 서버의 주소 (서버 개발을 할 때 실제 처리하는 곳의 주소)
+                    method : get(데이터가 주소에 포함되어 전송되는 방식), post(데이터가 전송될 때 정보가 노출되지 않음) -->
+        </form>
+    </body>
+</html>

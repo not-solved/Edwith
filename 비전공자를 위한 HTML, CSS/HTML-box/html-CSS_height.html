@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>높이 속성</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <h3>height 속성</h3>
+        <comment>(기본 값 : 0)</comment>
+        <p>
+            -- 속성 값-- 
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td><b>auto</b></td>
+                        <td>브라우저에 의해 자동으로 계산하여 지정 <br>
+                            (기본적으로 컨텐츠 영역의 내용만큼 높이를 갖는다.)</td>
+                    </tr>
+                    <tr>
+                        <td><b>length</b></td>
+                        <td>고정값으로 지정 (ex. px, em, ...)</td>
+                    </tr>
+                    <tr>
+                        <td><b>percent</b></td>
+                        <td>부모 요소의 height에 상대적인 크기를 지정<br>
+                            (단, 부모 요소가 명시적으로 height 값이 있어야 한다.)</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table> <br><br>
+            height는 content 영역의 높이를 제어할 때 사용하는데 이때 auto가 아닌 특정한 값을 지정하여 사용하면<br>
+            width 속성과 마찬가지로 box model 영역에서 margin 영역을 제외한 모든 영역에 대해 영향을 받는다.
+            </p> <br><br>
+        예를 들어, <br>
+        <fieldset>
+            <index>width</index>: 100px;<br>
+            <index>height</index>: 100px;<br>
+            <index>padding</index>: 10px;<br>
+            <index>border</index>: 15px solid black;<br>
+        </fieldset> <br>
+        이와 같이 선언된다면 요소의 총 세로 크기는 150px가 된다.
+        height 또한 padding, border 영역에 대해 추가로 영향을 받기 때문 <br><br>
+        
+        <img src="height-1.png" width="250px" height="260px"> <br><Br>
+        100px content + (10px * 2) padding + (15px * 2) border = 150px 이기 때문.<br><br>
+
+        또한 height는 %를 이용하여 크기를 지정할 수 있다.<br><br>
+        
+        <fieldset>
+        .parent { <br>
+            <index>width</index>: 300px;<br>
+            <index>height</index>: 200px;<br>
+            <index>border</index>: 20px solid red;<br>
+        } <br><br>
+        .child {<br>
+            <indeX>height</index>: 50%;<Br>
+            <index>background</index>: red;<br>
+        }
+        </fieldset> <br><br>
+        <img src="height-2.png" width="250px" height="260px"> <br><Br>
+
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>height</title>
+            <style>
+                div {
+                height: 300px;
+                margin: 10px 20px;
+                padding: 30px; 
+                border: 20px solid black;
+                }
+            </style>
+            </head>
+            <body>
+                <div> css height 속성 실습 </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

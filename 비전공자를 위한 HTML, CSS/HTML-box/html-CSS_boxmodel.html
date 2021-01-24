@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>박스 모델</title>
+        <style>
+            fieldset { padding: 20px;  }
+            li {  padding: 10px; }
+        </style>
+    </head>
+    <body>
+        <h3>Box model</h3>
+        <img src="boxmodel.png" width="500" height="250">
+        <ul type="disc">
+            <li><b>Content 영역</b></li>
+            요소의 실제 내용을 포함하는 영역입니다. 따라서 크기는 내용의 너비 및 높이를 나타냅니다.<br><br>
+            <li><b>Border 영역</b></li>
+            content 영역을 감싸는 테두리 선을 border라고 합니다.<br><br>
+            <li><b>Padding 영역</b></li>
+            content 영역을 감싸는 테두리 선을 border라고 합니다.<br>
+            content 영역이 배경, 색, 또는 이미지가 있을 때 패딩 영역까지 영향을 미칩니다.<br>
+            이에 따라 padding을 content의 연장으로 볼 수 있습니다.<br><br>
+
+            <li><b>Margin 영역</b></li>
+            border 바깥쪽의 영역을 margin이라고 합니다.<br>
+            border 영역을 다른 요소와 구별하기 위해 쓰이는 빈 영역입니다.<br>
+            즉, 주변 요소와의 여백(간격)을 margin을 이용해 지정할 수 있습니다.<br>
+        </ul>
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>box model</title>
+                    <style>
+                        div {
+                        margin: 50px;
+                        padding: 50px;
+                        border: 10px solid #000;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div> 박스 모델에 대하여 알아봅시다 </div>	
+                </body>
+            </html>
+        -->
+    </body>
+</html>

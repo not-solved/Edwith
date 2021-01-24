@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Media Query</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>@media(at media)</h2>
+        CSS2 Media Type을 확장했기 때문에 선언 방식은 동일 <br><br>
+        
+        <fieldset>
+            <index>@media mediaqueries</index> { /* style rules */ }
+        </fieldset> <br><Br>
+        
+        @media로 시작하며 이는 '이제부터 미디어 쿼리를 시작한'라는 뜻이다.<br>
+        뒤에 미디어 쿼리 구문 (mediaqueries)이 따르며 이어서 중괄호 ( {} )를 이용해 스타일 규칙이 들어간다.<br>
+        미디어 쿼리 구문은 논리적으로 평가되며 <u>참이면 스타일 규칙이 적용되고 거짓이면 무시된다.</u><br>
+        미디어 쿼리 구문은 미디어 타입과 미디어 특성으로 이루어져있다.<br><br>
+
+        <h3>미디어 타입</h3>
+        <p>
+            - <org>all</org>, braille, embossed, handheld, <org>print</org>, 
+            projection, <org>screen</org>, speech, tty, tv
+        </p> <br>
+        자주 쓰이는 것은 all, print, screen 정도이며, 그 중 screen이 거의 대부분이다.<br>
+        화면을 출력하는 디스플레이가 있는 미디어들은 전부 screen에 속하기 때문에 현실적으로 고려해야 하는 미디어들은 전부 이것에 해당.<br>
+        print 또한 간혹 사용된다.<br>
+        all 타입은 모든 미디어에 적용되는 타입. 미디어를 구분하는 용도가 아니기 때문에 유용하게 사용되지는 않는다.<br><br><br>
+
+
+        <h3>미디어 특성</h3>
+        <p>
+            - <org>width</org>, height, device-width, device-height <org>orientation</org>, 
+            aspect-ratio, device-aspect-ratio, color, color-index, monochrome, resolution, scan, grid
+        </p> <br>
+        자주 쓰이는 것은 width, orientation 정도<br>
+        width : 뷰포트의 너비 (브라우저 창의 너비)를 의미 (스크린의 크기가 아님)<br>
+        orientation : 미디어가 세로모드인지 가로모드인지 구분<br>
+        - 미디어 쿼리에서는 width와 height를 비교하여 height가 width 이상이면 세로모드, 반대인 경우는 가로모드로 해석한다.<br>
+        - 세로모드에서는 portrait, 가로모드에서는 landscape 키워드와 매칭된다.<br><br>
+
+    </body>
+</html>

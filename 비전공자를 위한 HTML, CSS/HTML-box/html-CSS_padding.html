@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Padding</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <h3>Padding 속성</h3>
+        <comment>(기본 값 : 0)</comment>
+        <p>
+            -- 속성 값-- 
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td><b>length</b></td>
+                        <td>고정값으로 지정 (ex. px, em, ...)</td>
+                    </tr>
+                    <tr>
+                        <td><b>percent</b></td>
+                        <td>요소의 width에 상대적인 크기를 지정</td>
+                    </tr>
+                    <tr>
+                        <td><b>padding-top</b></td>
+                        <td>content 영역의 위쪽 여백을 지정</td>
+                    </tr>
+                    <tr>
+                        <td><b>padding-right</b></td>
+                        <td>content 영역의 오른쪽 여백을 지정</td>
+                    </tr>
+                    <tr>
+                        <td><b>padding-bottom</b></td>
+                        <td>content 영역의 아래쪽 여백을 지정</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>padding-left</b></td>
+                        <td>content 영역의 왼쪽 여백을 지정</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </p> <br><br>
+
+        <h3>Syntax</h3>
+        <fieldset>
+            <table>
+                <thead></thead>
+                <style> td {
+                    border: none; 
+                    text-align: right;
+                 } </style>
+                <tbody>
+                    <tr>
+                        <td><index>padding</index></td>
+                        <td>: [-top] </td>
+                        <td> [-right] </td>
+                        <td> [-bottom] </td>
+                        <td> [-left];</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 0</td>
+                        <td> 10px</td>
+                        <td> 20px </td>
+                        <td> 30px</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 0</td>
+                        <td> 10px</td>
+                        <td> 20px </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 0</td>
+                        <td> 10px</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </fieldset>
+
+        <p>
+            기본적으로 padding의 4가지 속성을 위와 같이 축약하여 사용할 수 있다.<br>
+            속성의 순서는 고정되어있으며, 위쪽을 기준으로 시계방향으로 돌아간다고 생각하면 된다.<br>
+            축약형으로 사용할 때 반드시 4개의 속성에 대한 값을 모두 적어야 하는 것은 아니다.<br>
+            속성값은 1~4개의 값을 사용할 수 있으며 border에서는 축약형 사용 시 정의되지 않은 속성값에 대해서 기본값이 적용되었지만, padding은 조금 다른 방식으로 동작한다.<br>
+             => 상하, 좌우 영역의 값이 같을 때 하나로 합쳐서 적용할 수도 있기 때문
+             
+             <br><br>
+             <ul type="disc">
+                 <li>padding: 20px 30px 40px 30px</li>
+                 - 좌우의 패딩 값이 같을 때 <u>padding : 20px 30px 40p 과 같이 사용 가능</u><br>
+                 <li>padding: 20px 30px 20px</li>
+                 - 좌우 패딩과 마찬가지로 상하 패딩 값이 같을 때 <u> padding : 20px 30px 와 같이 함축하여 사용 가능</u><br>
+                 <li>padding: 20px 20px</li>
+                 - 상하좌우 패딩 값이 모두 같을 때 <u>padding: 20px와 같이 하나의 함축 값으로 사용 가능</u>
+             </ul>
+        </p> <br><br>
+
+        <strong>참고 : CSS에서는 0 값에 대해 단위를 따로 명시하지 않음</strong><br>
+        <comment>0px = 0% = 0em = 0pt = .... = " 0"</comment>
+
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>padding</title>
+            <style>
+                div {
+                padding-top: 10px;
+                padding-right: 20px;
+                padding-bottom: 40px;
+                padding-left: 20px;
+
+
+                /* 축약형 */
+                padding: 10px 20px 40px;
+                }
+            </style>
+            </head>
+            <body>
+                <div> css padding 속성 실습 </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

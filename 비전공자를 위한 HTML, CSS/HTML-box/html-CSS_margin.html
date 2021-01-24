@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Margin</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <h3>Margin 속성</h3>
+        <comment>(기본 값 : 0)</comment>
+        <p>
+            -- 속성 값-- 
+            <table>
+                <thead></thead>
+                <style>
+                    td {
+                      border: none;
+                      text-align: right;  
+                    }
+                </style>
+                <tbody>
+                    <tr>
+                        <td><b>length</b></td>
+                        <td>고정값으로 지정 (ex. px, em, ...)</td>
+                    </tr>
+                    <tr>
+                        <td><b>percent</b></td>
+                        <td>요소의 width에 상대적인 크기를 지정</td>
+                    </tr>
+                    <tr>
+                        <td><b>auto</b></td>
+                        <td>브라우저에 의해 계산된 값이 적용된다.</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table> <br>
+            <p>
+                <ul type="disc">
+                    <li><strong>margin-top</strong></li>
+                    - border 영역의 위쪽 여백을 지정<br><br>
+                    <li><strong>margin-right</strong></li>
+                    - border 영역의 오른쪽 여백을 지정<br><br>
+                    <li><strong>margin-bottom</strong></li>
+                    - border 영역의 아래쪽 여백을 지정<br><br>
+                    <li><strong>margin-left</strong></li>
+                    - border 영역의 왼쪽 여백을 지정<br><br>
+                </ul>
+            </p>
+        </p> <br>
+
+        <h3>Syntax</h3>
+        <fieldset>
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td><index>margin</index></td>
+                        <td>: [-top] </td>
+                        <td> [-right] </td>
+                        <td> [-bottom] </td>
+                        <td> [-left];</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 0</td>
+                        <td> 10px</td>
+                        <td> 20px </td>
+                        <td> 30px</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 0</td>
+                        <td> 10px</td>
+                        <td> 20px </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> 0</td>
+                        <td> 10px</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </fieldset>
+
+        <p>
+            padding과 마찬가지로 축약하여 사용할 수 있고, 상하 좌우 에 대해서 값이 같으면 하나로 축약하여 사용 가능<br>
+            margin에서는 수치 외에 auto 값을 사용 가능.
+             <br><br>
+             <ul type="disc">
+                <li><strong><u>margin auto</u></strong></li>
+                - 기본적으로 브라우저에 의해 계산이 이루어지는데, 대부분의 경우 0(기본값) 또는 요소의 해당 측면에서 사용 가능한 공간과 같은 값을 가진다.<br>
+                이를 활용하여 수평 중앙 정렬을 할 수 있습니다. <br><br>
+                <fieldset>
+                    <index>margin-left</index>: auto;<br>
+                    <index>margin-right</index>: auto;<br>
+                </fieldset> <br><br>
+                - 좌우의 margin이 모두 auto로 적용 되었다면, 브라우저는 요소가 가질수 있는 가로 영역에서 자신의 width를 제외한 나머지 여백에 크기에 대해 균등 분할 하여 적용하며 이에 따라 요소는 수평 중앙 정렬이 된다.<br>
+                - 상하의 경우 수직 중앙 정렬이 되지 않으며, 기본적인 플로우를 벗어나는 상황에 대해서 적용이됩니다. 
+             </ul>
+        </p> <br><br>
+
+        <fieldset>
+            <legend><h3>margin collapse(마진 병합)</h3></legend>
+            마진 병합은 인접한 두 개 이상의 수직 항향 박스의 마진이 하나로 합쳐지는 것을 의미<br>
+            다음의 3가지 경우에 발생
+            <ol type="1">
+                <li>두 요소가 상하로 인접한 경우</li>
+                - 위 요소의 하단 마진과 아래 요소의 상단 마진의 병합 발생<br><br>
+                <li>부모 요소와 첫 번째 자식 요소 또는 마지막 자식 요소</li>
+                <ol type="A">
+                    <li>부모 요소의 상단 마진과 첫 번째 자식 요소의 상단 마진 병합이 일어난다.</li>
+                    <li>부모 요소의 하단 마진과 마지막 자식 요소의 하단 마진 병합이 일어난다.</li>
+                </ol><br><br>
+                <li>내용이 없는 빈 요소의 경우</li>
+                - 해당 요소의 상단 마진과 하단 마진의 병합 발생
+            </ol>
+        </fieldset> <br><br>
+
+            - 마진 병합은 <u>수직 방향으로만 이루어지며</u>, 좌우에 대해서는 발생하지 않음<br><br>
+            - 마진 병합은 <u>반드시 맞닿아야 발생하기 때문</u>에 2, 3번째의 경우 padding 및 border가 없어야 한다.<br><br>
+
+            <img src="margin.png" width="400px" height="300px"> <br><br>
+
+            <strong>마진 병합을 활용하여 첫 번째와 두 번째 컴포넌트의 조합이 다양한 경우 여백을 다르게 활용 가능</strong>
+
+        <!--
+            코드 실습
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+            <meta charset="UTF-8">
+            <title>margin</title>
+            <style>
+                div {
+                margin-top: 10px;
+                margin-right: 20px;
+                margin-bottom: 10px;
+                margin-left: 20px;
+
+
+                /* 축약형 */
+                margin: 10px 20px ;
+                }
+            </style>
+            </head>
+            <body>
+                <div> css margin 속성 실습 </div>
+            </body>
+            </html>
+        -->
+    </body>
+</html>

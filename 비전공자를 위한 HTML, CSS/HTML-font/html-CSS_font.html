@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Font 축약형</title>
+    </head>
+    <body>
+        font 관련 속성
+
+        font-style, font-variant, font-weight, font-size/line-height, font-family 속성들을 한 번에 선언할 수 있는 축약형 속성입니다. 
+        
+            기본 값 : 각 속성들의 기본 값
+        
+        font: font-style font-variant font-weight font-size/line-height font-family | initial | inherit;
+        < 속성 값 >
+        
+        font-style
+        
+        font-style 지정, 기본 값은 normal
+        
+        font-variant
+        
+        font-variant 지정, 기본 값은 normal
+        
+        font-weight
+        
+        font-weight 지정, 기본 값은 normal
+        
+        font-size/line-height
+        
+        font-size/line-height 지정, 기본 값은 normal
+        
+        font-family
+        
+        font-family 지정
+        
+        /* style | size | family */
+        font: oblique 2em "돋움", dotum, sans-serif;
+        
+        /* style | variant | weight | size/line-height | family */
+        font: oblique small-caps bold 16px/1.5 '돋움';
+        
+        /* The font used in system dialogs */
+        font: message-box;
+        font: icon;
+        축약형을 선언할 때는 아래 사항들을 유의해야 합니다.
+        
+        font-size와 font-family는 반드시 선언해야 하는 필수 속성입니다.
+        빠진 속성이 있다면 기본 값으로 지정됩니다.
+        각 속성의 선언 순서를 지켜야 합니다.
+    </body>
+</html>

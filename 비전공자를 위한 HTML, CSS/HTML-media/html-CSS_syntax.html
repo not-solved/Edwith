@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8-">
+        <title>Media Query Syntax</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>미디어 쿼리 Syntax</h3>
+        <fieldset>
+            <index>media_query_list</index><br>
+            : S* [media_query [ ',' S* media_query ]* ]?<br>
+            ;
+            <index>media_query</index><br>
+            : [ONLY | NOT]? S* media_type S* [ AND S* expression ]*<br>
+            | expression [ AND S* expression ]*<br>
+            ;<br>
+            <index>expression</index><br>
+            : '(' S* media_feature S* [ ':' S* expr ]? ')' S*<br>
+            ;
+        </fieldset>
+        <ul type="disc">
+            <li><b>[ a ]</b></li>
+            - a가 나올수도 있고 나오지 않을수도 있음 <br>
+            <li><b>a | b</b></li>
+            - a 또는 b 둘 중에 하나를 선택함<br>
+            <li><b>a?</b></li>
+            - a가 0번 나오거나 1번 나올 수 있음 (0 또는 1개) <br>
+            <li><b>a*</b></li>
+            - a가 0번 나오거나 그 이상 계속 나올 수 있음 (없거나 있을 수 있음) <br>
+            <li><b>media_type</b></li>
+            - all, screen, print 등 명세에 정의된 미디어 타입 <br>
+            <li><b>media_feature</b></li>
+            - width, orientation 등 명세에 정의된 미디어 특성 <br><br>
+        </ul> <br>
+        위 Syntax를 요약하자면, <br>
+        <emp>media_query_list</emp><br>
+        <p>: 여러개의 미디어 쿼리로 이루어진 리스트로 작성 가능하며, 쉼표를 이용해서 구분한다.</p>
+        <emp>media_query</emp><br>
+        <p>
+            - A 형태<br>
+            <p>
+                미디어 타입에 'and' 키워드를 이용해서 미디어 표현식을 붙일 수 있다.<br>
+                미더아 타입 앞에는 'only' 또는 'not' 키워드가 올 수 있다.<br>
+                미디어 표현식은 생략 가능하기 때문에 미디어 타입 단독으로 사용할 수 있다.
+            </p> 
+        </p>
+        <p>
+            - B 형태<br>
+            <p>
+                미디어 타입 표현 없이 미디어 표현식이 바로 나올 수 있다.<br>
+                (미디어 타입이 명시되지 않으면 all으로 간주된다.)<br>
+                미디어 표현식은 'and' 키워드를 이용하여 계속해서 나올 수 있다.
+            </p>
+        </p>
+        <emp>expression</emp><br>
+        <p>
+            : 미디어 표현식은 괄호로 감싸야 하며, 특성 이름과 해당하는 값으로 이루어진다.<br>
+            값은 : 기호로 연결하며, 값 없이 특성 이름만으로도 작성할 수 있다.
+        </p> <br>
+
+        <h3>min- / max- 접두사</h3>
+        <p>
+            미디어 특성은 이름 앞에 min- 또는 max- 접두사를 붙일 수 있다.<br>
+            실제로 반응형 사이트를 제작할 때는 보통 접두사를 붙여서 사용하고 있다.<br>
+            (접두사를 붙이지 않고 사용하는 경우 효율적이지 못하기 때문)<br><br>
+            
+            예를 들어 뷰포트의 크기에 따라 다른 반응을 보이는 반응형 사이트의 경우<br>
+            접두사 없이 width: 00px라고 선언하게 되면 정확히 뷰포트의 크기가 00px에서만 적용되기 때문에<br>
+            다양한 기기들에 대응하기 힘들다.
+        </p> <br><br>
+
+        <fieldset>
+            <legend><h3>font-weight=600>예제 코드</h3></legend>
+                <strong>@media screen {...}</strong> <br>
+                <p>: 미디어 타입이 screen이면 적용된다.</p>
+                <strong>@media screen and (min-width: 768px) {...}</strong> <br>
+                <p>: 미디어 타입이 screen이며 width가 768px 이상이면 적용된다.<br>
+                    (두 조건 중 하나라도 거짓이면 적용되지 않음)</p>
+                <strong>@media (min-width: 768px) and (max-width: 1024px) {...}</strong> <br>
+                <p>: width가 768px 이상이며 1024px 이하일 경우 적용된다.</p>
+                <strong>@media (color-index)</strong> <br>
+                <p>: 미디어 장치가 color-index를 지원하면 적용된다.</p>
+                <strong>@media screen and (min-width: 768px), screen and (orientation: portrait), ...</strong> <br>
+                <p>: 쉼표로 연결된 미디어 쿼리 중 하나라도 참이면 적용된다.<br>
+                or 조건으로 연결된다 생각하면 된다.</p>
+                <strong>@media not screen and (min-width: 768px) </strong> <br>
+                <p>
+                    : 'not' 키워드는 하나의 media_query 전체를 부정한다.<br>
+                    => not(screen and (min-width: 768px) ) 이 올바른 해석<br><br>
+                    (+) @media not screen and (min-width: 768px), print<br>
+                --> not(screen and (min-width: 768px)) or print 이 올바는 해석
+                </p>
+        </fieldset> <br><br>
+
+        <fieldset>
+            <legend><h3>미디어 쿼리 선언 방법</h3></legend
+            <ol type="I">
+                <li><b>@media screen and (color)</b></li>
+                <p> : CSS 파일 내부 또는 style 태그 내부에서 사용 가능. (대부분의 경우 이렇게 사용)<br> </p>
+
+                <li><b>link rel="stylesheet" media="screen and (color)" href="example.css"></pre></b></li>
+                <p> : link 태그의 media 속성에 미디어 쿼리를 선언. 미디어 쿼리가 참이면 뒤에 CSS 파일 규칙이 적용된다.<br> </p>
+                
+                <li><b>@import url(example.css) screen and (color);</b></li>
+                <p> : CSS 파일 내부 또는 style 태그 내부에서 사용 가능. @import문 뒤에 미디어 쿼리를 선언하여 사용<br> </p>
+                
+            </ol>
+        </fieldset>
+    </body>
+</html>
